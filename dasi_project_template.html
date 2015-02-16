@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Total Family Income vs Abpoor (Low income - cant afford more children)</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<!-- Make sure that the knitr package is installed and loaded. -->
+
+<!-- For more info on the package options see http://yihui.name/knitr/options -->
+
+<!-- Replace below with the title of your project -->
+
+<h3>Total Family Income vs Abpoor (Low income - cant afford more children)</h3>
+
+<!-- Enter the code required to load your data in the space below. The data will be loaded but the line of code won't show up in your write up (echo=FALSE) in order to save space-->
+
+<!-- In the remainder of the document, add R code chunks as needed -->
+
+<h3>Introduction:</h3>
+
+<p>1) Research Question:
+   Is there a relationship between total family income (income06) and likelihood of having an abortion?</p>
+
+<p>2) This question can give an insight that, if we consider any family situation whose total family income is less than $1000 and if the mother is pregnant, then the family cannot afford to grow the child which will likely lead to aborting the child. So, I care that if there is any such kind of relationship seen, then something has to be done inorder to reduce the abortion rate.</p>
+
+<p>3) A pregnant mother should not take the decision of abortion due to low family income which can be unaccepatble reason for abortion. This case has to be seriously taken care if we bring out a positive inference in this research question.</p>
+
+<h3>Data:</h3>
+
+<p>1) Data Collection:
+The data consist of GSS Cumulative File from 1972 - 2012. General Social Survey (GSS) has been monitoring societal change and studying the growing complexity of American society. The GSS aims to gather data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes; to examine the structure and functioning of society in general as well as the role played by relevant subgroups; to compare the United States to other societies in order to place American society in comparative perspective and develop cross-national models of human society; and to make high-quality data easily accessible to scholars, students, policy makers, and others, with minimal cost and waiting.</p>
+
+<p>GSS questions cover a diverse range of issues including national spending priorities, marijuana use, crime and punishment, race relations, quality of life, confidence in institutions, and sexual behavior.</p>
+
+<p>2) The cases are the individuals in USA.</p>
+
+<p>3) The two variables used in the study are &ldquo;incom06&rdquo; and &ldquo;abpoor&rdquo; and both are categorical variables.</p>
+
+<p>4) The type of study used here is &ldquo;observational study&rdquo; as the data collected does not directly interfere with how the data arise.
+  As already stated, the data are collected randomly and it has nothing to do how   data looks like.</p>
+
+<p>5) The population of interest is all the people in US whose income is under $1000. We can generalize the findings from this analysis and generalize to the whole population. Once we find there is positive relation in abpoor and income under $1000, we can generalize to other income group and find whether it is alternative hypothesis or null hypothesis. </p>
+
+<p>6) The data cannot be used to produce causal link as this is an observational study. In an observational study, we can establish association between the explanatory and response variables.</p>
+
+<h3>Exploratory data analysis:</h3>
+
+<p>-&gt; Let us plot the abpoor variable with the income06 variable.</p>
+
+<pre><code class="r">plot(gss$abpoor ~ gss$income06)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtAAAAFoCAMAAABJ+DwrAAAAk1BMVEX9/v0AAAAAADkAAGUAOTkAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OWU5OY85j485j7U5j9pNTU1lAABlADllAGVlOQBlOTllOY9ltdpltf2POQCPOTmPOWWPZgCPZo+Pj2WPtY+P29qP2/21ZgC1/rW1/v3ajzna24/a/rXa/tra/v3m5ub9tWX924/9/rX9/tr9/v2lrSOsAAAAMXRSTlP///////////////////////////////////////////////////////////////8AH5pOIQAAAAlwSFlzAAALEgAACxIB0t1+/AAAEjlJREFUeJztnQt7o8YVQIPdbq1st1W8SVPZzbaRaiV19OD//7oyMLzEPO4VGKPxOV+yWMzlzgiORwPCw3c5QEJ8994NAJgShIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGpEBoSAqEhqRAaEgKhIakQGhICoSGW+e4ygz3L+YFQsONc37alMvDp9ccoeHmOf340lkiNNw49NCQFqdHxtCQKggNSTFG6LKjz5yvLn7uxrgjXC8vUmeX6yVrhyncSYMpBw0QF+o3lKfRh2nC4430RjjWx2tU7JT+Bg3jTwqzPwoy56us93M3xh3xx+XGw9Qtl3GBtcMU7qThlJcNkBeqN5Sn0YdpwuON9EY40sdrlO+Uock9EFqQEqE1EQiN0D4QOhDpBqEFKRFaE4HQCO0DoQORNfYytL0QjdCClAitiZi9hz4/rdsXCC1IidCaiPmHHKev2+ZnhBakRGhNBGNohPaB0IFINwgtSInQmgiERmgfCB2IdIPQgpQIrYlAaIT2gdCBSDcILUiJ0JoIhEZoHwgdiHSD0IKUCK2JQGiE9oHQgUg3CC1IidCaCIRGaB8IHYh0g9CClAitiUBohPaB0IFINwgtSInQmgiERmgfCB2IdIPQgpQIrYlAaIT2gdCBSDcILUiJ0JoIhEZo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" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+<p>-&gt; From the above plot we get a picture of how many people in each income category answered &ldquo;yes&rdquo; or &ldquo;no&rdquo; in abpoor field.</p>
+
+<p>-&gt; Let us see how many of the people in each category surveyed &ldquo;yes&rdquo; or &ldquo;no&rdquo; in abpoor for each income group. The below code help us to get the count.</p>
+
+<pre><code class="r">mytable &lt;- table(gss$abpoor, gss$income06)
+mytable
+</code></pre>
+
+<pre><code>##      
+##       Under $1 000 $1 000 To 2 999 $3 000 To 3 999 $4 000 To 4 999
+##   Yes           29              26              19              13
+##   No            46              38              27              18
+##      
+##       $5 000 To 5 999 $6 000 To 6 999 $7 000 To 7 999 $8 000 To 9 999
+##   Yes              15              17              24              48
+##   No               26              31              55              58
+##      
+##       $10000 To 12499 $12500 To 14999 $15000 To 17499 $17500 To 19999
+##   Yes              75              64              74              48
+##   No              125             110              97              75
+##      
+##       $20000 To 22499 $22500 To 24999 $25000 To 29999 $30000 To 34999
+##   Yes              58              67             105             123
+##   No              114             117             158             138
+##      
+##       $35000 To 39999 $40000 To 49999 $50000 To 59999 $60000 To 74999
+##   Yes              95             175             172             213
+##   No              167             267             224             288
+##      
+##       $75000 To $89999 $90000 To $109999 $110000 To $129999
+##   Yes              182               172                104
+##   No               189               156                108
+##      
+##       $130000 To $149999 $150000 Or Over Refused
+##   Yes                 82             209     199
+##   No                  53             130     238
+</code></pre>
+
+<p>-&gt; From the above table, we can see that there are about 29 people who survyed &ldquo;yes&rdquo; and 49 people surveyed &ldquo;no&rdquo;. Likewise we can see the count for other income groups as well. But we cannot come to any conclusion on the relationship without doing inferences.</p>
+
+<p>VISUALIZATION OUTPUT:
+-&gt; The below bar plot shows us the chart on the findings before.</p>
+
+<pre><code class="r">counts &lt;- table(gss$abpoor, gss$income06)
+barplot(counts, main = &quot;Distribution by income groups and abpoor&quot;, xlab = &quot;Income groups&quot;, 
+    col = c(&quot;darkblue&quot;, &quot;red&quot;), legend = rownames(counts))
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtAAAAFoCAMAAABJ+DwrAAAAtFBMVEX9/v0AAAAAADkAAGUAAIsAOTkAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OWU5OY85ZrU5j485j7U5j9o6AABlAABlADllAGVlOQBlOTllOY9lZjlltbVltdpltf1mAACPOQCPOTmPOWWPZgCPZo+PjzmPj2WPtY+P27WP29qP2/2QAAC1ZgC1tWW1/rW1/v22AADajzna24/a/rXa/tra/v3bAAD9tWX924/9/rX9/tr9/v3/AABhwELBAAAAPHRSTlP/////////////////////////////////////////////////////////////////////////////AP8FrvlYAAAACXBIWXMAAAsSAAALEgHS3X78AAATOElEQVR4nO2dC5vjtBlGySx0SdhuaZiFQjvM0m0pIXRIlyHJmP//v2pdfEtkx7LkRP58zvNAZh1Lr2yfKLKS2J9kAIL45NYNAIgJQoMoEBpEgdAgCoQGUSA0iAKhQRQIDaJAaBAFQoMoEBpEgdAgCoQGUSA0iAKhQRQIDaJAaBAFQoMoEBpEgdAgCoQGUSA0iAKhQRQIDaJAaBDFDIQ+3i8UD+qvV0/V8u1DucKrp5fH+lPlCs0SdVwF2te+Gsf718/1f7uaKZr5CL1YNxdvFw+1fzkOfHOFUxI1BaFv3YDxMf3mfvHqSf91WC0WqkfOFV++PN59t7j7j+mhf1kschm0AbkWv+kVTNmdeTmYdawgRQG9/t68Wo5lRWolFaFXtsX3i88f8wU7/WahFxYvmHzNV/+9V3Wp5mxqebopz1WdpvGm1D5fK1+5Gfj3QujGs2a7fmm2p7ZdJlYEsxFadbjqL9NfW1+11q8/3lvBS0GbQm/1U8vMrrPUtZYFdrmXW6PDsaqoWLtWfL8oKBeuq6o+W6lsXWOVVwpts2zjn01Y0eBm85zP1v4o29PcrmbHPl3mI/TOCH1Y2UOnRhT5oVyWHq7zP+42pUV6BVMi19U8la+zt4e+LHBYLYv39bIitdJhpb19KIur94i8h30whYo3g0x1u/njzki3VP8s8yqhVZaqq+ndeeCuZubJdpV12Orr27W81sEYndkJrbsutcAIrbrW6qQwX3Yu9F4f7p16ShtQCF0WyLv4ZZlUrmSHIVlZ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" alt="plot of chunk unnamed-chunk-4"/> </p>
+
+<h3>Inference:</h3>
+
+<p>Hypothesis Statement:
+Does there appear to be relationship between &ldquo;abpoor&rdquo; and total family income?</p>
+
+<p>H0 =&gt; &ldquo;abpoor&rdquo; and &ldquo;income06&rdquo; are independent (do not vary).
+Ha =&gt; &ldquo;abpoor&rdquo; and &ldquo;income06&rdquo; are dependent (do vary)</p>
+
+<p>Let us check whether the conditions are met:
+1) Independence: Sampled observations are independent.
+-&gt; Yes in this research sample, every sample are independent to each other. So independence is acheived.
+2) the samples taken are random.
+3) If sampling without replacement we get n which is less than 10% total population in US.
+4) each case only contributes to one cell in the table. If we look at the &ldquo;mytable&rdquo; output in Part3, we can see that each case contributes to each income groups.</p>
+
+<p>Method to test the Hypothesis:
+As we have two categorical variables and atleast one of these has level greater than 2, we go for &ldquo;chi-square independent test&rdquo;.
+As already stated, we are going to find the independence on &ldquo;abpoor&rdquo; and &ldquo;income06&rdquo;. So we go for this method.</p>
+
+<p>INFERENCE:
+In this test we are going to find the difference in observed and expected counts between various groups and find the chi-square.</p>
+
+<p>The observed counts can be achieved by:</p>
+
+<pre><code class="r">mytable &lt;- table(gss$abpoor, gss$income06)
+mytable
+</code></pre>
+
+<pre><code>##      
+##       Under $1 000 $1 000 To 2 999 $3 000 To 3 999 $4 000 To 4 999
+##   Yes           29              26              19              13
+##   No            46              38              27              18
+##      
+##       $5 000 To 5 999 $6 000 To 6 999 $7 000 To 7 999 $8 000 To 9 999
+##   Yes              15              17              24              48
+##   No               26              31              55              58
+##      
+##       $10000 To 12499 $12500 To 14999 $15000 To 17499 $17500 To 19999
+##   Yes              75              64              74              48
+##   No              125             110              97              75
+##      
+##       $20000 To 22499 $22500 To 24999 $25000 To 29999 $30000 To 34999
+##   Yes              58              67             105             123
+##   No              114             117             158             138
+##      
+##       $35000 To 39999 $40000 To 49999 $50000 To 59999 $60000 To 74999
+##   Yes              95             175             172             213
+##   No              167             267             224             288
+##      
+##       $75000 To $89999 $90000 To $109999 $110000 To $129999
+##   Yes              182               172                104
+##   No               189               156                108
+##      
+##       $130000 To $149999 $150000 Or Over Refused
+##   Yes                 82             209     199
+##   No                  53             130     238
+</code></pre>
+
+<p>Then we can find the expected count by the formula given in the video lectures.</p>
+
+<p>Now let us find the overall abpoor rate (&ldquo;yes&rdquo;) in the sample: 2408/5362 = 44.9%</p>
+
+<p>Then we should find the chi-square, we get 148.67.
+The degrees of freedom is (no.of rows-1)*(no. of columns - 1) = 25.
+We cand find the p-value as:</p>
+
+<pre><code class="r">pchisq(148.61, 25, lower.tail = FALSE)
+</code></pre>
+
+<pre><code>## [1] 1.521e-19
+</code></pre>
+
+<p>The p-value seems to be very low, hence we reject the null hypothesis.
+Hence, we can come to conclusion that &ldquo;abpoor&rdquo; and &ldquo;income06&rdquo; are dependent to each other.</p>
+
+<h3>Conclusion:</h3>
+
+<p>From the inferences, we found that the abpoor do vary as the total family income in any family increases.
+But there are certain aspects which we need to analyse of which there is some dependent relationship. Some columns like education attained, age, etc are the other factors which may force the mother to abort the child rather than the family income. So this has to be considered.</p>
+
+<h3>REFERENCES:</h3>
+
+<p>Data Citation</p>
+
+<p>Smith, Tom W., Michael Hout, and Peter V. Marsden. General Social Survey, 1972-2012 [Cumulative File]. ICPSR34802-v1. Storrs, CT: Roper Center for Public Opinion Research, University of Connecticut /Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributors], 2013-09-11. doi:10.3886/ICPSR34802.v1</p>
+
+<p>URL: <a href="http://doi.org/10.3886/ICPSR34802.v1">http://doi.org/10.3886/ICPSR34802.v1</a></p>
+
+<h3>APENDIX:</h3>
+
+<p>The data set used in this project is:</p>
+
+<pre><code class="r">head(gss, n = 10)
+</code></pre>
+
+<pre><code>##    caseid year age    sex  race hispanic uscitzn educ paeduc maeduc speduc
+## 1       1 1972  23 Female White     &lt;NA&gt;    &lt;NA&gt;   16     10     NA     NA
+## 2       2 1972  70   Male White     &lt;NA&gt;    &lt;NA&gt;   10      8      8     12
+## 3       3 1972  48 Female White     &lt;NA&gt;    &lt;NA&gt;   12      8      8     11
+## 4       4 1972  27 Female White     &lt;NA&gt;    &lt;NA&gt;   17     16     12     20
+## 5       5 1972  61 Female White     &lt;NA&gt;    &lt;NA&gt;   12      8      8     12
+## 6       6 1972  26   Male White     &lt;NA&gt;    &lt;NA&gt;   14     18     19     NA
+## 7       7 1972  28   Male White     &lt;NA&gt;    &lt;NA&gt;   13     16     12     NA
+## 8       8 1972  27   Male White     &lt;NA&gt;    &lt;NA&gt;   16     16     14     NA
+## 9       9 1972  21 Female Black     &lt;NA&gt;    &lt;NA&gt;   12     12     12     NA
+## 10     10 1972  30 Female Black     &lt;NA&gt;    &lt;NA&gt;   12     10      7     11
+##            degree vetyears sei          wrkstat       wrkslf       marital
+## 1        Bachelor     &lt;NA&gt;  NA Working Fulltime Someone Else Never Married
+## 2  Lt High School     &lt;NA&gt;  NA          Retired Someone Else       Married
+## 3     High School     &lt;NA&gt;  NA Working Parttime Someone Else       Married
+## 4        Bachelor     &lt;NA&gt;  NA Working Fulltime Someone Else       Married
+## 5     High School     &lt;NA&gt;  NA    Keeping House Someone Else       Married
+## 6     High School     &lt;NA&gt;  NA Working Fulltime Someone Else Never Married
+## 7     High School     &lt;NA&gt;  NA Working Fulltime Someone Else      Divorced
+## 8        Bachelor     &lt;NA&gt;  NA Working Fulltime Someone Else Never Married
+## 9     High School     &lt;NA&gt;  NA Working Parttime Someone Else Never Married
+## 10    High School     &lt;NA&gt;  NA Working Fulltime Someone Else       Married
+##            spwrksta sibs childs agekdbrn           incom16 born parborn
+## 1              &lt;NA&gt;    3      0       NA           Average &lt;NA&gt;    &lt;NA&gt;
+## 2     Keeping House    4      5       NA     Above Average &lt;NA&gt;    &lt;NA&gt;
+## 3  Working Fulltime    5      4       NA           Average &lt;NA&gt;    &lt;NA&gt;
+## 4  Working Fulltime    5      0       NA           Average &lt;NA&gt;    &lt;NA&gt;
+## 5  Temp Not Working    2      2       NA     Below Average &lt;NA&gt;    &lt;NA&gt;
+## 6              &lt;NA&gt;    1      0       NA           Average &lt;NA&gt;    &lt;NA&gt;
+## 7              &lt;NA&gt;    7      2       NA     Above Average &lt;NA&gt;    &lt;NA&gt;
+## 8              &lt;NA&gt;    1      0       NA           Average &lt;NA&gt;    &lt;NA&gt;
+## 9              &lt;NA&gt;    2      2       NA           Average &lt;NA&gt;    &lt;NA&gt;
+## 10 Working Fulltime    7      4       NA Far Below Average &lt;NA&gt;    &lt;NA&gt;
+##    granborn income06 coninc          region          partyid polviews
+## 1        NA     &lt;NA&gt;  25926 E. Nor. Central     Ind,Near Dem     &lt;NA&gt;
+## 2        NA     &lt;NA&gt;  33333 E. Nor. Central Not Str Democrat     &lt;NA&gt;
+## 3        NA     &lt;NA&gt;  33333 E. Nor. Central      Independent     &lt;NA&gt;
+## 4        NA     &lt;NA&gt;  41667 E. Nor. Central Not Str Democrat     &lt;NA&gt;
+## 5        NA     &lt;NA&gt;  69444 E. Nor. Central  Strong Democrat     &lt;NA&gt;
+## 6        NA     &lt;NA&gt;  60185 E. Nor. Central     Ind,Near Dem     &lt;NA&gt;
+## 7        NA     &lt;NA&gt;  50926 E. Nor. Central     Ind,Near Dem     &lt;NA&gt;
+## 8        NA     &lt;NA&gt;  18519 E. Nor. Central     Ind,Near Dem     &lt;NA&gt;
+## 9        NA     &lt;NA&gt;   3704 W. Sou. Central  Strong Democrat     &lt;NA&gt;
+## 10       NA     &lt;NA&gt;  25926 W. Sou. Central  Strong Democrat     &lt;NA&gt;
+##         relig           attend natspac natenvir natheal natcity natcrime
+## 1      Jewish      Once A Year    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 2    Catholic       Every Week    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 3  Protestant     Once A Month    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 4       Other             &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 5  Protestant             &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 6  Protestant      Once A Year    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 7    Catholic       Every Week    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 8      Jewish             &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 9  Protestant Sevrl Times A Yr    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+## 10 Protestant More Thn Once Wk    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;
+##    natdrug nateduc natrace natarms nataid natfare natroad natsoc natmass
+## 1     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 2     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 3     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 4     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 5     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 6     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 7     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 8     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 9     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+## 10    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;
+##    natpark confinan conbus conclerg coneduc confed conlabor conpress
+## 1     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 2     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 3     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 4     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 5     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 6     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 7     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 8     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 9     &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 10    &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+##    conmedic contv conjudge consci conlegis conarmy joblose jobfind
+## 1      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 2      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 3      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 4      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 5      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 6      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 7      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 8      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 9      &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 10     &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+##             satjob richwork jobinc jobsec jobhour jobpromo jobmeans
+## 1  A Little Dissat     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 2             &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 3   Mod. Satisfied     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 4   Very Satisfied     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 5             &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 6   Mod. Satisfied     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 7   Very Satisfied     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 8  A Little Dissat     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 9   Mod. Satisfied     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 10  Mod. Satisfied     &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+##            class rank         satfin    finalter       finrela unemp
+## 1   Middle Class   NA Not At All Sat      Better       Average  &lt;NA&gt;
+## 2   Middle Class   NA   More Or Less Stayed Same Above Average  &lt;NA&gt;
+## 3  Working Class   NA      Satisfied      Better       Average  &lt;NA&gt;
+## 4   Middle Class   NA Not At All Sat Stayed Same       Average  &lt;NA&gt;
+## 5  Working Class   NA      Satisfied      Better Above Average  &lt;NA&gt;
+## 6   Middle Class   NA   More Or Less      Better Above Average  &lt;NA&gt;
+## 7   Middle Class   NA   More Or Less      Better Above Average  &lt;NA&gt;
+## 8  Working Class   NA Not At All Sat      Better       Average  &lt;NA&gt;
+## 9  Working Class   NA   More Or Less       Worse       Average  &lt;NA&gt;
+## 10 Working Class   NA Not At All Sat Stayed Same Below Average  &lt;NA&gt;
+##    govaid getaid union getahead parsol kidssol abdefect abnomore abhlth
+## 1    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes      Yes    Yes
+## 2    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes       No    Yes
+## 3    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes      Yes    Yes
+## 4    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;       No       No    Yes
+## 5    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes      Yes    Yes
+## 6    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes      Yes    Yes
+## 7    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes       No    Yes
+## 8    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes      Yes    Yes
+## 9    &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes       No    Yes
+## 10   &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;      Yes       No    Yes
+##    abpoor abrape absingle abany pillok sexeduc divlaw         premarsx
+## 1     Yes    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt; Not Wrong At All
+## 2      No    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     Always Wrong
+## 3     Yes    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     Always Wrong
+## 4     Yes    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     Always Wrong
+## 5     Yes    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;  Sometimes Wrong
+## 6     Yes    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;  Sometimes Wrong
+## 7      No    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt; Not Wrong At All
+## 8     Yes    Yes      Yes  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;  Sometimes Wrong
+## 9      No   &lt;NA&gt;       No  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt; Not Wrong At All
+## 10    Yes    Yes       No  &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;   &lt;NA&gt;     Always Wrong
+##    teensex xmarsex homosex suicide1 suicide2 suicide3 suicide4 fear owngun
+## 1     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 2     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 3     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 4     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 5     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 6     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 7     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 8     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 9     &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+## 10    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+##    pistol shotgun rifle              news tvhours racdif1 racdif2 racdif3
+## 1    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 2    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 3    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 4    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;       Once A Week      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 5    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 6    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 7    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 8    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 9    &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt; Less Than Once Wk      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+## 10   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;          Everyday      NA    &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;
+##    racdif4 helppoor helpnot helpsick helpblk
+## 1     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 2     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 3     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 4     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 5     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 6     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 7     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 8     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 9     &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+## 10    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;     &lt;NA&gt;    &lt;NA&gt;
+</code></pre>
+
+</body>
+
+</html>
+
